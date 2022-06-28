@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="H04opl_ArrayFilterenOpGroteGetallen/src"/>
+	<classpathentry kind="src" path="H04opl_ArrayHoogsteEnLaagste/src"/>
+	<classpathentry kind="src" path="H04opl_ArrayListVullenEnTonen/src"/>
+	<classpathentry kind="src" path="H04opl_ArrayListVullenZonderDubbels/src"/>
+	<classpathentry kind="src" path="H04opl_ArrayVanRekeningObjecten/src"/>
+	<classpathentry kind="src" path="H04opl_FrequentietabelMaken/src"/>
+	<classpathentry kind="src" path="H04opl_GemiddeldeMetTweedimensionaleArray/src"/>
+	<classpathentry kind="src" path="H04opl_GezinsuitgavenHerwerkt/src"/>
+	<classpathentry kind="src" path="H04opl_LangsteOpeenvolgendeStijgendeReeks/src"/>
+	<classpathentry kind="src" path="H04opl_Marktkraam/src"/>
+	<classpathentry kind="src" path="H04opl_Matrix/src"/>
+	<classpathentry kind="src" path="H04opl_Puntenverwerking/src"/>
+	<classpathentry kind="src" path="H04opl_TweedimensionaleArrayVanObjecten/src"/>
+	<classpathentry kind="output" path="H04opl_FrequentietabelMaken/bin"/>
+</classpath>

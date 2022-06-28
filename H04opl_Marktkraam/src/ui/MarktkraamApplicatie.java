@@ -18,7 +18,7 @@ public class MarktkraamApplicatie
             System.out.print("Geef het aantal kramen op de rommelmarkt: ");
             aantal = s.nextInt();
         }
-        while (aantal < 0);
+        while (aantal <= 0);
 
         Marktkraam[] markt = new Marktkraam[aantal];
         
