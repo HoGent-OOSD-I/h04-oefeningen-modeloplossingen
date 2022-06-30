@@ -1,10 +1,16 @@
+package ui;
 
 import java.util.Scanner;
 
 
-public class EnhancedForLus
+public class StartUpEnhancedForLus
 {
-    public static void main(String args[])
+	public static void main(String args[]) 
+	{
+		new StartUpEnhancedForLus().filterArrayOpGroteGetallen();
+	}
+	
+    public void filterArrayOpGroteGetallen()
     {
         int[] getallen = new int[10];
         int getal2;
