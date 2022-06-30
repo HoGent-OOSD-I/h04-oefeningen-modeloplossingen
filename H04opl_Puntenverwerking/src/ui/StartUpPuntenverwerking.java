@@ -1,11 +1,19 @@
+package ui;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class PuntenverwerkingApp
+public class StartUpPuntenverwerking
 {
 	public static void main(String[] args)
 	{
+		new StartUpPuntenverwerking().verwerkPunten();
+	}
+	
+	
+	private void verwerkPunten() {
+
 		// lijst opvullen
 		List<String> studenten = new ArrayList<>();
 		studenten.add("Jan");
