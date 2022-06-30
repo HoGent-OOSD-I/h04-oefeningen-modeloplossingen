@@ -4,12 +4,17 @@ import java.util.Scanner;
 
 import domein.Matrix;
 
-public class MatrixApplicatie
+public class StartUpMatrixApplicatie
 {   
     public static void main(String[] args)
     {
-        Scanner s = new Scanner(System.in);
-        int rijen, kolommen;
+        new StartUpMatrixApplicatie().werkMetMatrices();
+    }
+    
+
+        private void werkMetMatrices() {
+        Scanner    s = new Scanner(System.in);
+		int rijen, kolommen;
         int[][] matrix, getransponeerd;
         
         System.out.print("Geef het aantal rijen van de matrix: ");
