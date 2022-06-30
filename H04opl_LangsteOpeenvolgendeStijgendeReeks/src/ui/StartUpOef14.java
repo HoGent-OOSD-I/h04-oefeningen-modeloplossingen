@@ -1,8 +1,16 @@
-public class MeestOpeenvolgendeStijgendeGetallen
+package ui;
+
+public class StartUpOef14
 {
     public static void main(String[] args)
     {
-        int[] a = {4,7,15,3,9,22,36,24,28,14,19,27,30,31,2,9,29,30,16,19};
+    	new StartUpOef14().geefMeestOpeenvolgendeStijgendeGetallen();
+    }
+    
+    
+    private void geefMeestOpeenvolgendeStijgendeGetallen() {
+
+		int[] a = {4,7,15,3,9,22,36,24,28,14,19,27,30,31,2,9,29,30,16,19};
         int aantalStijgende = 1, max = 0;
         String reeks = a[0] + " ", langste = "";
         
