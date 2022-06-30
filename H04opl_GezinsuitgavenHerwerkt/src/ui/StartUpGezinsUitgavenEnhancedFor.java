@@ -1,3 +1,4 @@
+package ui;
 /*Opgave : Voer voor alle maanden van het jaar de gezinsuitgaven in.
  Bereken het maandgemiddelde en druk het nummer af van die maanden, 
 waarvan de uitgaven groter zijn dan het gemiddelde.
@@ -10,16 +11,22 @@ waarvan de uitgaven groter zijn dan het gemiddelde.
  */
 import java.util.Scanner;
 
-public class GezinsUitgavenGewoneFor
+public class StartUpGezinsUitgavenEnhancedFor
 {
-
-    public static void main(String args[])
+	public static void main(String args[])
     {
+		new StartUpGezinsUitgavenEnhancedFor().bepaalGemiddeldeGezinsuitgaven();
+    }
+
+    public void bepaalGemiddeldeGezinsuitgaven()
+    {
+
         String result = "";
         double[] m = new double[12];
         double gem = 0;
         Scanner input = new Scanner(System.in);
      
+        // kan geen enhanced for worden want de inhoud van de array moet gewijzigd worden
         for (int i=0; i<m.length; i++)
         {
         	System.out.printf("Geef de uitgaven in voor maand %d : ", i+1);
@@ -29,12 +36,14 @@ public class GezinsUitgavenGewoneFor
               
         gem /= 12;
                  
-        for (int i=0; i<m.length; i++)
+        int maandIndex = 1;
+        for (double maand : m)
         {
-        	if (m[i] > gem)
+        	if (maand > gem)
         	{
-        		result += String.format("%d ", i+1);
+        		result += String.format("%d ", maandIndex);
         	}
+        	maandIndex++;
         }
         
         if (!result.equals(""))

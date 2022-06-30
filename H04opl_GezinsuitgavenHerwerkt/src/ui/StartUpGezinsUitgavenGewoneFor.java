@@ -1,3 +1,5 @@
+package ui;
+
 /*Opgave : Voer voor alle maanden van het jaar de gezinsuitgaven in.
  Bereken het maandgemiddelde en druk het nummer af van die maanden, 
 waarvan de uitgaven groter zijn dan het gemiddelde.
@@ -10,17 +12,20 @@ waarvan de uitgaven groter zijn dan het gemiddelde.
  */
 import java.util.Scanner;
 
-public class GezinsUitgavenEnhancedFor
+public class StartUpGezinsUitgavenGewoneFor
 {
+	public static void main(String args[])
+    {
+		new StartUpGezinsUitgavenGewoneFor().bepaalGemiddeldeGezinsuitgaven();
+    }
 
-    public static void main(String args[])
+    public void bepaalGemiddeldeGezinsuitgaven()
     {
         String result = "";
         double[] m = new double[12];
         double gem = 0;
         Scanner input = new Scanner(System.in);
      
-        // kan geen enhanced for worden want de inhoud van de array moet gewijzigd worden
         for (int i=0; i<m.length; i++)
         {
         	System.out.printf("Geef de uitgaven in voor maand %d : ", i+1);
@@ -30,22 +35,21 @@ public class GezinsUitgavenEnhancedFor
               
         gem /= 12;
                  
-        int maandIndex = 1;
-        for (double maand : m)
+        for (int i=0; i<m.length; i++)
         {
-        	if (maand > gem)
+        	if (m[i] > gem)
         	{
-        		result += String.format("%d ", maandIndex);
+        		result += String.format("%d ", i+1);
         	}
-        	maandIndex++;
         }
         
-        if (!result.equals(""))
+        if (result.equals(""))
         {
-            System.out.printf("In de volgende maanden werd een omzet behaald groter dan het gemiddelde: %s%n", result);
+        	System.out.printf("Geen maanden gevonden waarin mee werd uitgegeven dan het gemiddelde!%n");
+            
         } else
         {
-            System.out.printf("Geen maanden gevonden die meer omzet hebben dan het gemiddelde!%n");
+        	System.out.printf("In de volgende maanden werd meer uitgegeven dan het gemiddelde: %s%n", result);
         }
     }
 }
