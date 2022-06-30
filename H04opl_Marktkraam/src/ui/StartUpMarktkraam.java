@@ -4,10 +4,16 @@ import java.util.Scanner;
 
 import domein.Marktkraam;
 
-public class MarktkraamApplicatie 
+public class StartUpMarktkraam 
 {
 	public static void main(String[] args) 
 	{
+		new StartUpMarktkraam().werkMetMarktkramen();
+	}
+	
+	
+	private void werkMetMarktkramen() {
+	
 		Scanner s = new Scanner(System.in);
 		String naam;
 		int aantal, afmeting, keuze;
