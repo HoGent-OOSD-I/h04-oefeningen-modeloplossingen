@@ -15,11 +15,11 @@ public class StartUpArrayHoogsteLaagsteEnhancedFor {
 				kl = omzet;
 				klMaand = ind;
 			}
-
-			if (omzet > gr) {
-				gr = omzet;
-				grMaand = ind;
-			}
+			else
+				if (omzet > gr) {
+					gr = omzet;
+					grMaand = ind;
+				}
 			ind++;
 		}
 		System.out.printf("Hoogste omzet %d in maand %d%n", gr, grMaand);

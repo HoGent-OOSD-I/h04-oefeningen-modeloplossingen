@@ -15,11 +15,11 @@ public class StartUpArrayHoogsteLaagsteGewoneFor {
 				kl = omzetten[ind];
 				klMaand = ind;
 			}
-
-			if (omzetten[ind] > gr) {
-				gr = omzetten[ind];
-				grMaand = ind;
-			}
+			else
+				if (omzetten[ind] > gr) {
+					gr = omzetten[ind];
+					grMaand = ind;
+				}
 		}
 		System.out.printf("Hoogste omzet %d in maand %d%n", gr, grMaand);
 		System.out.printf("Laagste omzet %d in maand %d%n", kl, klMaand);

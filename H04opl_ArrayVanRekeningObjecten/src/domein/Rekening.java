@@ -8,14 +8,12 @@ public class Rekening
 
     public Rekening()
     {
-        setRekeningnummer(123456789);
-        setHouder("onbekend");
+        this(123456789,"onbekend");
     }
 
     public Rekening(long rekeningnummer)
     {
-        setRekeningnummer(rekeningnummer);
-        setHouder("onbekend");
+        this(rekeningnummer,"onbekend");
     }
 
     public Rekening(long rekeningnummer, String houder)
