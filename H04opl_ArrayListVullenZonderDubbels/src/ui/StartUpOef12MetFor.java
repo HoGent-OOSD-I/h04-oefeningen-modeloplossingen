@@ -1,12 +1,17 @@
+package ui;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Oef2MetFor
+public class StartUpOef12MetFor
 {
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
+		new StartUpOef12MetFor().vulArrayListMetUniekeCijfers();
+	}
+
+	private void vulArrayListMetUniekeCijfers() {
 		Scanner s = new Scanner(System.in);
 		List<Integer> cijfers = new ArrayList<>();
 		int invoer, deler, eenheid;

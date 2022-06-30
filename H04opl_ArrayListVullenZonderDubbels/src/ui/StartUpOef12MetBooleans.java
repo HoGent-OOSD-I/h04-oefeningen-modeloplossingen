@@ -1,11 +1,18 @@
+package ui;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Oef2MetBooleans
+import ui.StartUpOef12;
+
+public class StartUpOef12MetBooleans
 {
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
+		new StartUpOef12MetBooleans().vulArrayListMetUniekeCijfers();
+	}
+
+	private void vulArrayListMetUniekeCijfers() {
 		Scanner s = new Scanner(System.in);
 		int invoer, eenheid;
 		String uitvoer = "";
