@@ -2,9 +2,9 @@ package ui;
 
 import java.util.Scanner;
 
-public class Oef11 {
+public class StartUpOef9 {
 	public static void main(String arg[]) {
-		new Oef11().berekenGemiddeldeTweedimensionaleArray();
+		new StartUpOef9().berekenGemiddeldeTweedimensionaleArray();
 	}
 
 	public void berekenGemiddeldeTweedimensionaleArray() {
