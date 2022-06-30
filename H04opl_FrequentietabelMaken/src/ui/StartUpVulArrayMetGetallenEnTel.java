@@ -1,10 +1,17 @@
+package ui;
+
 import java.util.Scanner;
 
-public class VulArrayMetGetallenEnTel
+public class StartUpVulArrayMetGetallenEnTel
 {
     public static void main(String[] args)
     {
-        int[] deArray = new int[20];
+    	new StartUpVulArrayMetGetallenEnTel().vulArrayMetGetallenEnTel();
+    }
+    
+    private void vulArrayMetGetallenEnTel() {
+	
+		int[] deArray = new int[20];
         int[] tel = new int[10];
         
         Scanner s = new Scanner(System.in);
