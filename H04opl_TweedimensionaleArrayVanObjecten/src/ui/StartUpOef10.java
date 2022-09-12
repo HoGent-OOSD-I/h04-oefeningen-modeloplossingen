@@ -8,7 +8,7 @@ public class StartUpOef10 {
 		new StartUpOef10().werkMetTweedimArrayVanRekeningObjecten();
 	}
 
-	public void werkMetTweedimArrayVanRekeningObjecten() {
+	private void werkMetTweedimArrayVanRekeningObjecten() {
 
 		Rekening rekeningen[][] = new Rekening[3][];
 		Scanner input = new Scanner(System.in);
