@@ -10,7 +10,7 @@ public class StartUpEnhancedForLus
 		new StartUpEnhancedForLus().filterArrayOpGroteGetallen();
 	}
 	
-    public void filterArrayOpGroteGetallen()
+    private void filterArrayOpGroteGetallen()
     {
         int[] getallen = new int[10];
         int getal2;

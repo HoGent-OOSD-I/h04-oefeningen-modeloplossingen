@@ -8,7 +8,7 @@ public class StartUpGewoneForLus {
 		new StartUpGewoneForLus().filterArrayOpGroteGetallen();
 	}
 
-	public void filterArrayOpGroteGetallen() {
+	private void filterArrayOpGroteGetallen() {
 		int[] getallen = new int[10];
 		int getal2;
 
