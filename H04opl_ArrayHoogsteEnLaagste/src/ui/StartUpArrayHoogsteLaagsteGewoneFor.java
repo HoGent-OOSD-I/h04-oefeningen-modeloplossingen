@@ -5,7 +5,7 @@ public class StartUpArrayHoogsteLaagsteGewoneFor {
 		new StartUpArrayHoogsteLaagsteGewoneFor().bepaalHoogsteLaagste();
 	}
 
-	public void bepaalHoogsteLaagste() {
+	private void bepaalHoogsteLaagste() {
 
 		int[] omzetten = { 360, 2100, 450, 1450, 650, 780, 321, 1200, 560, 1850, 960, 420 };
 		int kl = omzetten[0], gr = omzetten[0], grMaand = 1, klMaand = 1;
