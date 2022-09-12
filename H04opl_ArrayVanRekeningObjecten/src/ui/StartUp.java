@@ -7,7 +7,7 @@ public class StartUp {
 		new StartUp().werkMetEenArrayVanRekeningObjecten();
 	}
 
-	public void werkMetEenArrayVanRekeningObjecten() {
+	private void werkMetEenArrayVanRekeningObjecten() {
 
 		double[] bedragen = { 100, 777.77, 287.15, -350, 399.99, 123.45, 987.65, -68.18, 413.26 };
 		final int aantalRekeningen = bedragen.length;
