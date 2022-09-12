@@ -19,7 +19,7 @@ public class StartUpGezinsUitgavenGewoneFor
 		new StartUpGezinsUitgavenGewoneFor().bepaalGemiddeldeGezinsuitgaven();
     }
 
-    public void bepaalGemiddeldeGezinsuitgaven()
+	private void bepaalGemiddeldeGezinsuitgaven()
     {
         String result = "";
         double[] m = new double[12];

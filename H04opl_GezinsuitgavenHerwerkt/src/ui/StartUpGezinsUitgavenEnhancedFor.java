@@ -18,7 +18,7 @@ public class StartUpGezinsUitgavenEnhancedFor
 		new StartUpGezinsUitgavenEnhancedFor().bepaalGemiddeldeGezinsuitgaven();
     }
 
-    public void bepaalGemiddeldeGezinsuitgaven()
+	private void bepaalGemiddeldeGezinsuitgaven()
     {
 
         String result = "";
