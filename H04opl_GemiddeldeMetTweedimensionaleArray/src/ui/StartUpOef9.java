@@ -7,7 +7,7 @@ public class StartUpOef9 {
 		new StartUpOef9().berekenGemiddeldeTweedimensionaleArray();
 	}
 
-	public void berekenGemiddeldeTweedimensionaleArray() {
+	private void berekenGemiddeldeTweedimensionaleArray() {
 
 		double table[][] = new double[3][2]; // 3 rijen, 2 kolommen
 		Scanner input = new Scanner(System.in);
