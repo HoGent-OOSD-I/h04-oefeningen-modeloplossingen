@@ -10,7 +10,8 @@ public class StartUpOef14
     
     private void geefMeestOpeenvolgendeStijgendeGetallen() {
 
-		int[] a = {4,7,15,3,9,22,36,24,28,14,19,27,30,31,2,9,29,30,16,19};
+		//int[] a = {4,7,15,3,9,22,36,24,28,14,19,27,30,31,2,9,29,30,16,19};
+		int[] a = {4,7,15,3,9,22,36,24,28,2,9,29,30,16,19,14,19,27,30,31};
         int aantalStijgende = 1, max = 0;
         String reeks = a[0] + " ", langste = "";
         
@@ -31,6 +32,11 @@ public class StartUpOef14
                 aantalStijgende = 1;
                 reeks = a[i] + " ";
             }
+        }//einde for
+        if (aantalStijgende > max) // nieuw langste zit op het einde van de array
+        {
+            max = aantalStijgende;
+            langste = reeks;
         }
         System.out.printf("Het meest aantal opeenvolgende stijgende "
             + "getallen is %d en bestaat uit de reeks %s%n", max, langste);
