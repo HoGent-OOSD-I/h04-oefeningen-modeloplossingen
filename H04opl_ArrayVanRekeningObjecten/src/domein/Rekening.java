@@ -5,6 +5,7 @@ public class Rekening
 	private long rekeningNummer; 
 	private double saldo; //0.0
 	private String naamHouder; //null
+	private String test;
 
 	/*
 	 Bij creatie van een Rekening-object is het saldo altijd 0.0. 

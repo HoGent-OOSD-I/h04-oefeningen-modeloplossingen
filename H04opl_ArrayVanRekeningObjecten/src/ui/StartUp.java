@@ -6,7 +6,7 @@ public class StartUp {
 	public static void main(String[] args) {
 		new StartUp().werkMetEenArrayVanRekeningObjecten();
 	}
-
+//test
 	private void werkMetEenArrayVanRekeningObjecten() {
 
 		double[] bedragen = { 100, 777.77, 287.15, -350, 399.99, 123.45, 987.65, -68.18, 413.26 };
