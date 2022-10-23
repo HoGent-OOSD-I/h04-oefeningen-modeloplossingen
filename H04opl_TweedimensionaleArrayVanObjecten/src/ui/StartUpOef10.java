@@ -19,7 +19,7 @@ public class StartUpOef10 {
 			rekeningen[i] = new Rekening[lengte];
 			for (int j = 0; j < rekeningen[i].length; j++) {
 				rekeningen[i][j] = new Rekening();
-				rekeningen[i][j].stortOp(10 * (j + 1) + i);
+				rekeningen[i][j].stort(10 * (j + 1) + i);
 			}
 		}
 
