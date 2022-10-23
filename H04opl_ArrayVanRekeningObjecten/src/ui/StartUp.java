@@ -18,12 +18,12 @@ public class StartUp {
 		for (int i = 0; i < aantalRekeningen; i++) {
 			houder = String.format("%c", 'A' + i);
 			rekeningen[i] = new Rekening(i, houder);
-			rekeningen[i].stortOp(bedragen[i]);
+			rekeningen[i].stort(bedragen[i]);
 		}
 
 		for (Rekening r : rekeningen) {
 			saldo = r.getSaldo();
-			uitvoer += String.format("Rekening %d van %s bevat %.2f%n", r.getRekeningnummer(), r.getHouder(), saldo);
+			uitvoer += String.format("Rekening %d van %s bevat %.2f%n", r.getRekeningNummer(), r.getNaamHouder(), saldo);
 			gemiddelde += saldo;
 		}
 		gemiddelde /= aantalRekeningen;

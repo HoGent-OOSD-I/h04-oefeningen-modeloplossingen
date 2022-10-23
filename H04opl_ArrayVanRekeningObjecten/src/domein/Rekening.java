@@ -2,68 +2,61 @@ package domein;
 
 public class Rekening
 {
-    private long rekeningnummer;
-    private double saldo;
-    private String houder;
+	private long rekeningNummer; 
+	private double saldo; //0.0
+	private String naamHouder; //null
 
-    public Rekening()
-    {
-        this(123456789,"onbekend");
-    }
+	/*
+	 Bij creatie van een Rekening-object is het saldo altijd 0.0. 
+	 Als het rekeningnummer niet meegegeven wordt, 
+	 dan is de waarde 123456789, houder is "onbekend" 
+	 als het niet meegegeven wordt.
+	 * */
+	public Rekening() {
+		this(123456789, "onbekend");
+	}
 
-    public Rekening(long rekeningnummer)
-    {
-        this(rekeningnummer,"onbekend");
-    }
+	public Rekening(long rekeningNummer) {
+		this(rekeningNummer, "onbekend");
+	}
 
-    public Rekening(long rekeningnummer, String houder)
-    {
-        setRekeningnummer(rekeningnummer);
-        setHouder(houder);
-    }
+	public Rekening(long rekeningNummer, String naamHouder) {
+		setRekeningNummer(rekeningNummer);
+		setNaamHouder(naamHouder);
+	}
+	
+	public long getRekeningNummer() {
+		return this.rekeningNummer;
+	}
 
-    private void setRekeningnummer(long rekeningnummer)
-    {
-        this.rekeningnummer = rekeningnummer;
-    }
+	public double getSaldo() {
+		return this.saldo;
+	}
 
-    public long getRekeningnummer()
-    {
-        return rekeningnummer;
-    }
+	public String getNaamHouder() {
+		return this.naamHouder;
+	}
 
-    public double getSaldo()
-    {
-        return saldo;
-    }
+	private void setRekeningNummer(long rekeningNummer) {
+		this.rekeningNummer = rekeningNummer;
+	}
 
-    public final void setHouder(String houder)
-    {
-        this.houder = houder;
-    }
+	private void setNaamHouder(String naamHouder) {
+		this.naamHouder = naamHouder;
+	}
 
-    public String getHouder()
-    {
-        return houder;
-    }
+	public boolean stort(double bedrag) {
+		if (bedrag <= 0)
+			return false;
+		//else NOOIT na een return
+		this.saldo += bedrag;
+		return true;
+	}
 
-    public boolean stortOp(double bedrag)
-    {
-    	if (bedrag > 0)
-         { 
-    		saldo += bedrag;
-    		return true;
-         }
-    	return false;
-    }
-    
-    public boolean haalAf(double bedrag)
-    {
-    	if (bedrag > 0 && saldo >= bedrag)
-         { 
-    		saldo -= bedrag;
-    		return true;
-         }
-    	return false;
-    }
+	public boolean haalAf(double bedrag) {
+		if (bedrag <= 0 || bedrag > saldo)
+			return false;
+		this.saldo -= bedrag;
+		return true;
+	}
 }
