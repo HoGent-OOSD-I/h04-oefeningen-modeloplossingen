@@ -43,7 +43,7 @@ public class StartUpGezinsUitgavenGewoneFor
         	}
         }
         
-        if (result.equals(""))
+        if (result.isEmpty())
         {
         	System.out.printf("Geen maanden gevonden waarin mee werd uitgegeven dan het gemiddelde!%n");
             

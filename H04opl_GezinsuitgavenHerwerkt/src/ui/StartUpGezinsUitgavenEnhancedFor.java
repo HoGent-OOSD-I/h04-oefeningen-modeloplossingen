@@ -20,7 +20,6 @@ public class StartUpGezinsUitgavenEnhancedFor
 
 	private void bepaalGemiddeldeGezinsuitgaven()
     {
-
         String result = "";
         double[] m = new double[12];
         double gem = 0;
@@ -46,7 +45,7 @@ public class StartUpGezinsUitgavenEnhancedFor
         	maandIndex++;
         }
         
-        if (!result.equals(""))
+        if (!result.isEmpty())
         {
             System.out.printf("In de volgende maanden werd een omzet behaald groter dan het gemiddelde: %s%n", result);
         } else
