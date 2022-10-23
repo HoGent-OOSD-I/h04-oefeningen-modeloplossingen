@@ -33,7 +33,7 @@ public class StartUpGezinsUitgavenEnhancedFor
         	gem += m[i];
         }
               
-        gem /= 12;
+        gem /= m.length;
                  
         int maandIndex = 1;
         for (double maand : m)

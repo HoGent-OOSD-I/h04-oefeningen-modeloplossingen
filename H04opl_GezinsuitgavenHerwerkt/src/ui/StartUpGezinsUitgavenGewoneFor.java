@@ -33,7 +33,7 @@ public class StartUpGezinsUitgavenGewoneFor
         	gem += m[i];
         }
               
-        gem /= 12;
+        gem /= m.length;
                  
         for (int i=0; i<m.length; i++)
         {
