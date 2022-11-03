@@ -32,9 +32,10 @@ public class Marktkraam
     
 	public void voegToeAanInkomsten (double bedrag)
     {
-    	if (bedrag < 0)
-    		throw new IllegalArgumentException("Negatieve inkomsten kunnen niet verwerkt worden");
-    	inkomsten += bedrag;
+//    	if (bedrag < 0)
+//    		throw new IllegalArgumentException("Negatieve inkomsten kunnen niet verwerkt worden");
+    	if(bedrag > 0)
+    		inkomsten += bedrag;
     }
 
     public double berekenWinst()
