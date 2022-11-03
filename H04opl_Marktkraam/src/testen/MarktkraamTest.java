@@ -49,7 +49,7 @@ public class MarktkraamTest
     }
     
     @Test
-    public void maakMarktkraam_TeKorteLengte_geeftException() 
+    public void maakMarktkraam_TeKorteLengte_steltDefaultwaardeIn() 
     {
     	Marktkraam kraamTeKort = new Marktkraam("Piet", -2);
     	Assertions.assertEquals(10, kraamTeKort.getLengteInM());
