@@ -4,66 +4,66 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class StartUpPuntenverwerking
-{
-	public static void main(String[] args)
-	{
+public class StartUpPuntenverwerking {
+	public static void main(String[] args) {
 		new StartUpPuntenverwerking().verwerkPunten();
 	}
-	
-	
+
 	private void verwerkPunten() {
 
 		// lijst opvullen
 		List<String> studenten = new ArrayList<>();
-		studenten.add("Jan");
-		studenten.add("Piet");
-		studenten.add("Els");
-		studenten.add("Joke");
-		studenten.add("Evelien");
-		studenten.add("Ilse");
-		studenten.add("Steven");
-		studenten.add("Bart");
-		studenten.add("Peter");
-		studenten.add("Dirk");
-		
-		// lijst overlopen en punten laten invullen - zo bepalen in welke deellijst de student terecht moet komen
-		Scanner s = new Scanner(System.in);
-		int punten;
-		List<String> namenGeslaagden = new ArrayList<>();
-		List<String> namenNietGeslaagden = new ArrayList<>();
-		
-		for (String naam : studenten)
-		{
-			do
-			{
-				System.out.printf("Geef de punten op 20 (positief geheel getal) van %s: ", naam);
-				punten = s.nextInt();
-			}
-			while (punten < 0 || punten > 20);
-			
-			if (punten >= 10)
-				namenGeslaagden.add(naam);
+		studenten.add("Imani");
+		studenten.add("Tanaka");
+		studenten.add("Ayana");
+		studenten.add("Yaro");
+		studenten.add("Diara");
+		studenten.add("Lente");
+		studenten.add("Jin");
+		studenten.add("Sem");
+		studenten.add("Zaur");
+		studenten.add("Nyasha");
+
+		List<String> geslaagden = new ArrayList<>();
+		List<String> nietGeslaagden = new ArrayList<>();
+
+		for (String student : studenten) {
+			int resultaat = geefResultaat(student);
+			if (resultaat >= 10)
+				geslaagden.add(student);
 			else
-				namenNietGeslaagden.add(naam);
+				nietGeslaagden.add(student);
 		}
-		
+
 		// lijsten laten zien
-		if (namenGeslaagden.isEmpty())
-			System.out.println("Er zijn geen geslaagde studenten");
-		else
-		{
+		if (geslaagden.isEmpty())
+			System.out.println("Geen enkel student slaagde...");
+		else {
 			System.out.println("Volgende studenten zijn geslaagd: ");
-			for (String naam : namenGeslaagden)
-				System.out.println(naam);
+			for (String student : geslaagden)
+				System.out.println(student);
 		}
-		if (namenNietGeslaagden.isEmpty())
-			System.out.println("Alle studenten zijn geslaagd");
-		else
-		{
+		if (nietGeslaagden.isEmpty())
+			System.out.println("Er waren geen niet geslaagden");
+		else {
 			System.out.println("Volgende studenten zijn niet geslaagd: ");
-			for (String naam : namenNietGeslaagden)
-				System.out.println(naam);
+			for (String student : nietGeslaagden)
+				System.out.println(student);
 		}
+	}
+
+	private int geefResultaat(String student) {
+		Scanner invoer = new Scanner(System.in);
+		boolean geldigeInvoer;
+		int resultaat;
+		do {
+			System.out.printf("Geef resultaat van %s (0-20) > ", student);
+			resultaat = invoer.nextInt();
+			geldigeInvoer = resultaat >= 0 && resultaat <= 20;
+			if (!geldigeInvoer)
+				System.out.println("Een geldig resultaat ligt tussen 0 en 20!");
+		} while (!geldigeInvoer);
+		return resultaat;
+
 	}
 }
