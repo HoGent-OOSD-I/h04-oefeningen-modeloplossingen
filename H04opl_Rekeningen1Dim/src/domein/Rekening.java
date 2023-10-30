@@ -42,7 +42,7 @@ public class Rekening {
 		this.rekeningNummer = rekeningNummer;
 	}
 
-	private void setNaamHouder(String naamHouder) {
+	public final void setNaamHouder(String naamHouder) {
 		this.naamHouder = naamHouder;
 	}
 
