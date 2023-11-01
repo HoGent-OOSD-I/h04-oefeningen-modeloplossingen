@@ -18,7 +18,7 @@ public class VierOpEenRijApp {
 		// check hier of karakters vier zelfde karakters op rij bevat
 		// en verzorg de uitvoer
 		int rijLengte = 0;
-		int huidigKarakter = ' ';
+		int huidigKarakter = karakters[0];
 		for (char c : karakters) {
 			if (c == huidigKarakter) {
 				rijLengte++;
