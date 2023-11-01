@@ -81,7 +81,7 @@ public class RommelmarktApp {
 	private String geefKraamhouder(int kraamnummer) {
 		String houder;
 		boolean geldigeInvoer;
-		invoer.nextLine(); // buffer leegmaken
+		//invoer.nextLine(); // buffer leegmaken
 		do {
 			System.out.printf("Geef de naam van de kraamhouder voor kraam %d op: ", kraamnummer);
 			houder = invoer.nextLine();

@@ -11,7 +11,8 @@ public class Tankstation {
 	}
 
 	public boolean tank(int pompNummer, int aantalLiter) {
-		boolean geldigeTankbeurt = pompNummer >= 1 && pompNummer <= 5 && aantalLiter >= 5 && aantalLiter <= 80
+		boolean geldigeTankbeurt = pompNummer >= 1 && pompNummer <= pompen.length 
+				&& aantalLiter >= 5 && aantalLiter <= 80
 				&& pompen[pompNummer - 1] >= aantalLiter;
 		if (geldigeTankbeurt)
 			pompen[pompNummer - 1] -= aantalLiter;
@@ -19,7 +20,7 @@ public class Tankstation {
 	}
 
 	public int geefInhoud(int pompNummer) {
-		if (pompNummer >= 1 && pompNummer <= 5)
+		if (pompNummer >= 1 && pompNummer <= pompen.length)
 			return pompen[pompNummer - 1];
 		return -1;
 	}
