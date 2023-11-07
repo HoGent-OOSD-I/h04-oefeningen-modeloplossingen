@@ -8,26 +8,38 @@ public class GezinsuitgavenApp {
 		new GezinsuitgavenApp().toonMaandenMetUitgavenBovenGemiddelde();
 	}
 
-	private void toonMaandenMetUitgavenBovenGemiddelde() {
-		Scanner invoer = new Scanner(System.in);
-		double[] uitgaven = new double[12];
+	private Scanner invoer = new Scanner(System.in);
 
-		double gemiddelde = 0;
-		for (int i = 0; i < uitgaven.length; i++) {
-			System.out.printf("Geef de uitgaven in voor maand %d: ", i + 1);
-			uitgaven[i] = invoer.nextDouble();
-			gemiddelde += uitgaven[i] / uitgaven.length;
+	private void toonMaandenMetUitgavenBovenGemiddelde() {
+
+		double[] maanden = new double[12];
+
+
+		for (int i = 0; i < maanden.length; i++) {
+			maanden[i] = geefUitgave(i + 1);
 		}
 
-		String maandenMetUitgaveGroterDanGemiddelde = "";
-		for (int i = 0; i < uitgaven.length; i++)
-			if (uitgaven[i] > gemiddelde)
-				maandenMetUitgaveGroterDanGemiddelde += String.format("%d ", i + 1);
+		double gem = 0.0;
+		for (double maand : maanden)
+			gem += maand;
+		gem /= maanden.length;
 
-		if (!maandenMetUitgaveGroterDanGemiddelde.isEmpty())
-			System.out.printf("In de volgende maanden werd een omzet behaald groter dan het gemiddelde: %s",
-					maandenMetUitgaveGroterDanGemiddelde);
-		else
-			System.out.printf("Er zijn geen maanden met uitgaven hoger dan het gemiddelde!");
+		String result = "";
+		for (int i = 0; i < maanden.length; i++) {
+			if (maanden[i] > gem) {
+				result += String.format("%d ", i + 1);
+			}
+		}
+
+		if (!result.isEmpty()) {
+			System.out.printf("In de volgende maanden werd een omzet behaald groter dan het gemiddelde: %s%n", result);
+		} else {
+			System.out.printf("Geen maanden gevonden die meer omzet hebben dan het gemiddelde!%n");
+		}
+	}
+
+	private double geefUitgave(int maand) {
+		System.out.printf("Geef de uitgaven in voor maand %d : ", maand);
+		return invoer.nextDouble();
 	}
 }

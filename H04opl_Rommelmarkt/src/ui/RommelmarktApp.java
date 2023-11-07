@@ -9,6 +9,8 @@ public class RommelmarktApp {
 		new RommelmarktApp().simuleerRommelmarkt();
 	}
 
+	private Scanner invoer = new Scanner(System.in);
+	
 	private void simuleerRommelmarkt() {
 		int aantalKramen = geefAantalKramen();
 		Marktkraam[] markt = new Marktkraam[aantalKramen];
@@ -36,7 +38,6 @@ public class RommelmarktApp {
 	}
 
 	private double geefBedrag() {
-		Scanner invoer = new Scanner(System.in);
 		double bedrag;
 		boolean geldigeInvoer;
 		do {
@@ -50,7 +51,6 @@ public class RommelmarktApp {
 	}
 
 	private int geefKeuze(int aantalKramen, String menu) {
-		Scanner invoer = new Scanner(System.in);
 		int keuze;
 		boolean geldigeInvoer;
 		do {
@@ -66,7 +66,6 @@ public class RommelmarktApp {
 	}
 
 	private int geefAantalKramen() {
-		Scanner invoer = new Scanner(System.in);
 		int aantal;
 		boolean geldigeInvoer;
 		do {
@@ -80,9 +79,9 @@ public class RommelmarktApp {
 	}
 
 	private String geefKraamhouder(int kraamnummer) {
-		Scanner invoer = new Scanner(System.in);
 		String houder;
 		boolean geldigeInvoer;
+		//invoer.nextLine(); // buffer leegmaken
 		do {
 			System.out.printf("Geef de naam van de kraamhouder voor kraam %d op: ", kraamnummer);
 			houder = invoer.nextLine();
@@ -94,7 +93,6 @@ public class RommelmarktApp {
 	}
 
 	private int geefBreedteKraam(int kraamnummer) {
-		Scanner invoer = new Scanner(System.in);
 		int breedte;
 		boolean geldigeInvoer;
 		do {

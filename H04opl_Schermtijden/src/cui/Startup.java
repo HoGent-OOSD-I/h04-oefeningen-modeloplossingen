@@ -14,6 +14,7 @@ public class Startup {
 
 		int startHuidigeReeks = 0, aantalInHuidigeReeks = 0;
 		int startLangsteReeks = 0, aantalInLangsteReeks = 0;
+		
 		for (int i = 1; i < tijden.length; i++) {
 			if (tijden[i] < tijden[i - 1])
 				aantalInHuidigeReeks++;
@@ -33,7 +34,7 @@ public class Startup {
 
 		if (aantalInLangsteReeks == 0)
 			System.out.println("Wat een ontgoocheling, je schermtijd ging enkel omhoog ipv omlaag!");
-		else if (aantalInLangsteReeks == 9) {
+		else if (aantalInLangsteReeks == tijden.length - 1) {
 			System.out.println("Proficiat! Challenge completed! Elke dag ging je schermtijd omlaag.");
 			System.out.printf("Uiteindelijk is je schermtijd met %d minuten gedaald!",
 					tijden[startLangsteReeks] - tijden[startLangsteReeks + aantalInLangsteReeks]);
