@@ -27,7 +27,7 @@ public class Startup {
 			else
 				ronde++;
 		}
-		System.out.printf("%nProficiat %s! Je hebt de stoelendans gewonnen!", kinderen.get(0));
+		System.out.printf("%nProficiat %s! Je hebt de stoelendans gewonnen!", kinderen.getFirst());
 	}
 
 	private String geefNaam() {

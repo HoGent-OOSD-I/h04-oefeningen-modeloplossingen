@@ -17,7 +17,7 @@ public class Startup {
 			int cijfer = getal / deeltal;
 			getal %= deeltal;
 			if (!uniekeCijfers.contains(cijfer))
-				uniekeCijfers.add(uniekeCijfers.size(), cijfer);
+				uniekeCijfers.add(cijfer);
 		}
 		System.out.printf("In volgorde van voorkomen zijn de unieke cijfers in %d:%n", oorspronkelijkGetal);
 		for (int cijfer : uniekeCijfers) {
