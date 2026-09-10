@@ -1,9 +1,7 @@
 package cui;
 
-import java.util.Scanner;
-
 public class Startup {
-	public static void main(String args[]) {
+	void main() {
 		new Startup().toonGetallenGroterDanOndergrens();
 	}
 
@@ -15,19 +13,17 @@ public class Startup {
 		}
 		int ondergrens = geefGetal("Geef de ondergrens op: ");
 
-		System.out.printf("%nElementen van de array die strikt groter dan %d zijn:%n", ondergrens);
+		IO.println("\nElementen van de array die strikt groter dan " + ondergrens + " zijn:");
 		String res = String.format("%10s%10s%n", "Index", "Waarde");
 
 		for (int index = 0; index < getallen.length; index++) {
 			if (getallen[index] > ondergrens)
 				res += String.format("%10d%10d%n", index, getallen[index]);
 		}
-		System.out.print(res);
+		IO.print(res);
 	}
 
 	private int geefGetal(String vraag) {
-		Scanner input = new Scanner(System.in);
-		System.out.print(vraag);
-		return input.nextInt();
+		return Integer.parseInt(IO.readln(vraag));
 	}
 }

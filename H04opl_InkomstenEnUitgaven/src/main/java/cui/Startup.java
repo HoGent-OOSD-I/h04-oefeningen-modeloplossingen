@@ -2,11 +2,10 @@ package cui;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class Startup {
 
-	public static void main(String[] args) {
+	void main() {
 		new Startup().vraagBedragenEnToonInkomstenEnUitgaven();
 	}
 
@@ -25,19 +24,18 @@ public class Startup {
 			}
 			bedrag = geefBedrag();
 		}
-		System.out.printf("%nInkomsten (totaal = %.2f Euro):%n", totaalInkomsten);
+		IO.println(String.format("%nInkomsten (totaal = %.2f Euro):", totaalInkomsten));
 		for (Double inkomst : inkomsten) {
-			System.out.printf("%.2f  ", inkomst);
+			IO.print(String.format("%.2f  ", inkomst));
 		}
-		System.out.printf("%n%nUitgaven (totaal = %.2f Euro):%n", totaalUitgaven);
+		IO.println(String.format("%n%nUitgaven (totaal = %.2f Euro):", totaalUitgaven));
 		for (Double uitgave : uitgaven) {
-			System.out.printf("%.2f  ", uitgave);
+			IO.print(String.format("%.2f  ", uitgave));
 		}
 	}
 
 	private double geefBedrag() {
-		Scanner invoer = new Scanner(System.in);
-		System.out.print("Geef bedrag op (0 om te stoppen) > ");
-		return invoer.nextDouble();
+		String invoer = IO.readln("Geef bedrag op (0 om te stoppen) > ").replace(",",".");
+		return Double.parseDouble(invoer);
 	}
 }

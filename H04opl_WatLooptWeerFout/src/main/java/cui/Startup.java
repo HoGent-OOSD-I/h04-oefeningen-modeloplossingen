@@ -2,7 +2,7 @@ package cui;
 
 public class Startup {
 
-	public static void main(String[] args) {
+	void main() {
 		new Startup().toonSnippet();
 	}
 

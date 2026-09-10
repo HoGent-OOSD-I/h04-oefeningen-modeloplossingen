@@ -2,11 +2,9 @@ package cui;
 
 import domein.Tankstation;
 
-import java.util.Scanner;
-
 public class TankstationApp {
 
-    public static void main(String[] args) {
+    void main() {
         new TankstationApp().startTanken();
     }
 
@@ -17,48 +15,44 @@ public class TankstationApp {
         while (pompNummer != 0) {
             int aantalLiter = geefAantalLiter();
             if (tankStation.tank(pompNummer, aantalLiter)) {
-                System.out.printf("Je hebt %d liter getankt aan pomp %d%n", aantalLiter, pompNummer);
+                IO.println(String.format("Je hebt %d liter getankt aan pomp %d", aantalLiter, pompNummer));
                 totaalLiterGetankt += aantalLiter;
                 aantalSuccesvolleTankBeurten++;
             } else
-                System.out.printf("Sorry, er is onvoldoende brandstof aan pomp %d%n", pompNummer);
-            System.out.printf("%nOverzicht pompen:%n");
-            System.out.printf("%s%n", tankStation);
+                IO.println(String.format("Sorry, er is onvoldoende brandstof aan pomp " + pompNummer));
+            IO.println("\nOverzicht pompen:");
+            IO.println(tankStation);
             pompNummer = geefPompNummer();
         }
         if (aantalSuccesvolleTankBeurten != 0)
-            System.out.printf("Er werd in totaal %d liter getankt in %d tankbeurt%s.", totaalLiterGetankt,
-                    aantalSuccesvolleTankBeurten, aantalSuccesvolleTankBeurten == 1 ? "" : "en");
+            IO.println(String.format("Er werd in totaal %d liter getankt in %d tankbeurt%s.", totaalLiterGetankt,
+                    aantalSuccesvolleTankBeurten, aantalSuccesvolleTankBeurten == 1 ? "" : "en"));
         else {
-            System.out.println("Er waren geen tankbeurten:");
-            System.out.printf("%s%n", tankStation);
+            IO.println("Er waren geen tankbeurten:");
+            IO.println(tankStation);
         }
     }
 
     private int geefAantalLiter() {
-        Scanner invoer = new Scanner(System.in);
         boolean geldigeInvoer;
         int aantalLiter;
         do {
-            System.out.print("Hoeveel liter wens je te tanken (5 tot 80)? ");
-            aantalLiter = invoer.nextInt();
+            aantalLiter = Integer.parseInt(IO.readln("Hoeveel liter wens je te tanken (5 tot 80)? "));
             geldigeInvoer = aantalLiter >= 5 && aantalLiter <= 80;
             if (!geldigeInvoer)
-                System.out.println("Je moet minstens 5 en kan maximaal 80 liter tanken...");
+                IO.println("Je moet minstens 5 en kan maximaal 80 liter tanken...");
         } while (!geldigeInvoer);
         return aantalLiter;
     }
 
     private int geefPompNummer() {
-        Scanner invoer = new Scanner(System.in);
         boolean geldigeInvoer;
         int pompNummer;
         do {
-            System.out.print("Aan welke pomp wil je tanken (1-5), druk 0 om te stoppen? ");
-            pompNummer = invoer.nextInt();
+            pompNummer = Integer.parseInt(IO.readln("Aan welke pomp wil je tanken (1-5), druk 0 om te stoppen? "));
             geldigeInvoer = pompNummer >= 0 && pompNummer <= 5;
             if (!geldigeInvoer)
-                System.out.printf("We hebben geen pomp met nummer %d! Probeer opnieuw...%n", pompNummer);
+                IO.println("We hebben geen pomp met nummer " + pompNummer + "! Probeer opnieuw...");
         } while (!geldigeInvoer);
         return pompNummer;
     }

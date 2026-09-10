@@ -2,10 +2,9 @@ package cui;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class StartUpPuntenverwerking {
-    public static void main(String[] args) {
+    void main() {
         new StartUpPuntenverwerking().verwerkPunten();
     }
 
@@ -37,30 +36,28 @@ public class StartUpPuntenverwerking {
 
         // lijsten laten zien
         if (geslaagden.isEmpty())
-            System.out.println("Geen enkele student slaagde...");
+            IO.println("Geen enkele student slaagde...");
         else {
-            System.out.println("Volgende studenten zijn geslaagd: ");
+            IO.println("Volgende studenten zijn geslaagd: ");
             toonStudenten(geslaagden);
         }
         if (nietGeslaagden.isEmpty())
-            System.out.println("Er waren geen niet geslaagden");
+            IO.println("Er waren geen niet geslaagden");
         else {
-            System.out.println("Volgende studenten zijn niet geslaagd: ");
+            IO.println("Volgende studenten zijn niet geslaagd: ");
             toonStudenten(nietGeslaagden);
         }
     }
 
     private int geefResultaat(String student) {
-        Scanner invoer = new Scanner(System.in);
-        final int maxResultaat = 20;
+         final int maxResultaat = 20;
         boolean geldigeInvoer;
         int resultaat;
         do {
-            System.out.printf("Geef resultaat van %s (0-%d) > ", student, maxResultaat);
-            resultaat = invoer.nextInt();
+            resultaat = Integer.parseInt(IO.readln(String.format("Geef resultaat van %s (0-%d) > ", student, maxResultaat)));
             geldigeInvoer = resultaat >= 0 && resultaat <= maxResultaat;
             if (!geldigeInvoer)
-                System.out.printf("Een geldig resultaat ligt tussen 0 en %d!%n", maxResultaat);
+                IO.println("Een geldig resultaat ligt tussen 0 en "+ maxResultaat + "!");
         } while (!geldigeInvoer);
         return resultaat;
 
@@ -68,6 +65,6 @@ public class StartUpPuntenverwerking {
 
     private void toonStudenten(List<String> studenten) {
         for (String student : studenten)
-            System.out.println(student);
+            IO.println(student);
     }
 }

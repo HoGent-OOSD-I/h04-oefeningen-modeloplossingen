@@ -1,12 +1,10 @@
 package cui;
 
-import java.util.Scanner;
-
 import domein.Parking;
 
 public class ParkingApp {
 
-	public static void main(String[] args) {
+	void main() {
 		new ParkingApp().simuleerParking();
 	}
 
@@ -25,50 +23,47 @@ public class ParkingApp {
 
 	private void toonOverzichtParking(Parking parking) {
 		int vrijePlaatsen = parking.geefAantalVrijePlaatsen();
-		System.out.printf("%n%18s=== PARKING (%d vrije plaats%s) ===%n%s%n%n", "", vrijePlaatsen,
-				vrijePlaatsen == 1 ? "" : "en", parking);
+		IO.println(String.format("%n%18s=== PARKING (%d vrije plaats%s) ===%n%s%n", "", vrijePlaatsen,
+				vrijePlaatsen == 1 ? "" : "en", parking));
 	}
 
 	private void parkeer(Parking parking) {
 		int plaats = parking.parkeer(geefNummerplaat());
 		if (plaats == -1)
-			System.out.println("Sorry, de parking is vol, auto niet geparkeerd");
+			IO.println("Sorry, de parking is vol, auto niet geparkeerd");
 		else
-			System.out.printf("De auto staat geparkeerd op plaats %d%n", plaats);
+			IO.println("De auto staat geparkeerd op plaats " + plaats);
 	}
 
 	private void verlaat(Parking parking) {
 		boolean succes = parking.verlaat(geefNummerplaat());
 		if (succes)
-			System.out.println("De auto verliet de parking...");
+			IO.println("De auto verliet de parking...");
 		else
-			System.out.println("Deze auto stond niet op de parking!");
+			IO.println("Deze auto stond niet op de parking!");
 	}
 
 	private int geefMenuKeuze() {
-		Scanner invoer = new Scanner(System.in);
 		boolean geldigeInvoer;
 		int keuze;
 		do {
-			System.out.printf("1. Parkeer%n2. Verlaat parking%n3. Stop%nGeef je keuze op: ");
-			keuze = invoer.nextInt();
+			keuze = Integer.parseInt(IO.readln("1. Parkeer\n2. Verlaat parking\n3. Stop\nGeef je keuze op: "));
 			geldigeInvoer = keuze >= 1 && keuze <= 3;
 			if (!geldigeInvoer)
-				System.out.println("Enkel 1, 2 of 3 zijn geldig...");
+				IO.println("Enkel 1, 2 of 3 zijn geldig...");
 		} while (!geldigeInvoer);
 		return keuze;
 	}
 
 	private String geefNummerplaat() {
-		Scanner invoer = new Scanner(System.in);
 		boolean geldigeInvoer;
 		String nummerplaat;
 		do {
-			System.out.print("Geef de nummerplaat in > ");
-			nummerplaat = invoer.nextLine();
+			IO.print("Geef de nummerplaat in > ");
+			nummerplaat = IO.readln();
 			geldigeInvoer = nummerplaat.length() >= 3 && nummerplaat.length() <= 9;
 			if (!geldigeInvoer)
-				System.out.printf("Een geldige nummerplaat bevat 3 tot 9 karakters...%n");
+				IO.println("Een geldige nummerplaat bevat 3 tot 9 karakters...");
 		} while (!geldigeInvoer);
 		return nummerplaat;
 	}

@@ -1,7 +1,7 @@
 package cui;
 
 public class HoogsteLaagsteOmzet {
-	public static void main(String args[]) {
+	void main() {
 		new HoogsteLaagsteOmzet().bepaalEnToonHoogsteLaagsteOmzet();
 	}
 
@@ -22,8 +22,8 @@ public class HoogsteLaagsteOmzet {
  	}
 
     private void toonOmzet(String soort, int omzet, int maandNummer){
-        System.out.printf("%s omzet van %d Euro werd behaald in %d%s maand.%n", soort, omzet,
-                maandNummer, geefAchtervoegsel(maandNummer));
+        IO.println(String.format("%s omzet van %d Euro werd behaald in %d%s maand.", soort, omzet,
+                maandNummer, geefAchtervoegsel(maandNummer)));
     }
     private String geefAchtervoegsel(int maandNummer) {
         return maandNummer == 1 || maandNummer == 8 ? "ste" : "de";

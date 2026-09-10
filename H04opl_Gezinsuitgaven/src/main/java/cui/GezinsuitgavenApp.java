@@ -1,14 +1,11 @@
 package cui;
 
-import java.util.Scanner;
-
 public class GezinsuitgavenApp {
 
-	public static void main(String[] args) {
+	void main() {
 		new GezinsuitgavenApp().toonMaandenMetUitgavenBovenGemiddelde();
 	}
 
-	private Scanner invoer = new Scanner(System.in);
 
 	private void toonMaandenMetUitgavenBovenGemiddelde() {
 
@@ -32,14 +29,14 @@ public class GezinsuitgavenApp {
 		}
 
 		if (!result.isEmpty()) {
-			System.out.printf("In de volgende maanden werd er meer uitgegeven dan het gemiddelde: %s%n", result);
+			IO.println("In de volgende maanden werd er meer uitgegeven dan het gemiddelde: " + result);
 		} else {
-			System.out.printf("Geen maanden gevonden waarin meer werd uitgegeven dan het gemiddelde!%n");
+			IO.println("Geen maanden gevonden waarin meer werd uitgegeven dan het gemiddelde!");
 		}
 	}
 
 	private double geefUitgave(int maand) {
-		System.out.printf("Geef de uitgaven in voor maand %d : ", maand);
-		return invoer.nextDouble();
+		String invoer = IO.readln("Geef de uitgaven in voor maand " + maand + ": ").replace(",",".");
+		return Double.parseDouble(invoer);
 	}
 }

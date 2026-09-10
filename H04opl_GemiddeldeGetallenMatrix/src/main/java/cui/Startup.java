@@ -1,10 +1,8 @@
 package cui;
 
-import java.util.Scanner;
-
 public class Startup {
 
-	public static void main(String arg[]) {
+	void main() {
 		new Startup().berekenGemiddeldeVanGetallenInTweedimensionaleArray();
 	}
 
@@ -25,12 +23,11 @@ public class Startup {
 			aantalGetallen += rij.length;
 		}
 
-		System.out.printf("%nHet gemiddelde van alle getallen in de matrix is %.1f", som / aantalGetallen);
+		IO.println(String.format("%nHet gemiddelde van alle getallen in de matrix is %.1f", som / aantalGetallen));
 	}
 
 	private double geefElement(int rij, int kolom) {
-		Scanner invoer = new Scanner(System.in);
-		System.out.printf("Geef getal op rij %d en kolom %d: ", rij, kolom);
-		return invoer.nextDouble();
+        String invoer = IO.readln("Geef getal op rij " + rij + " en kolom "+ kolom + ": ").replace(",", ".");
+		return Double.parseDouble(invoer);
 	}
 }

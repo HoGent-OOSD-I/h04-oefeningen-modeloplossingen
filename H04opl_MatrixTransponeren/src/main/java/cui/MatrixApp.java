@@ -4,7 +4,7 @@ import java.security.SecureRandom;
 
 public class MatrixApp {
 
-	public static void main(String[] args) {
+	void main() {
 		new MatrixApp().maakEnTransponeerMatrix();
 	}
 
@@ -16,7 +16,7 @@ public class MatrixApp {
 				matrix[rij][kolom] = sr.nextInt(101);
 			}
 		}
-		System.out.println("Matrix:");
+		IO.println("Matrix:");
 		toonMatrix(matrix);
 
 		int[][] getransponeerdeMatrix = new int[matrix[0].length][matrix.length];
@@ -26,16 +26,16 @@ public class MatrixApp {
 			}
 		}
 
-		System.out.printf("%nGetransponeerde matrix:%n");
+		IO.print("\nGetransponeerde matrix:\n");
 		toonMatrix(getransponeerdeMatrix);
 	}
 
 	private void toonMatrix(int[][] matrix) {
 		for (int[] rij : matrix) {
 			for (int getal : rij) {
-				System.out.printf("%5d", getal);
+				IO.print(String.format("%5d", getal));
 			}
-			System.out.println();
+			IO.println();
 		}
 	}
 
