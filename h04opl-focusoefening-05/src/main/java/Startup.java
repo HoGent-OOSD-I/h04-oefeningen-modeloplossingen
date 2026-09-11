@@ -18,9 +18,9 @@ private void doeFocusoefening05() {
         matrix[i][matrix[i].length - 1] = true;
     }
 
-    for (int rij = 0; rij < matrix.length; rij++) {
-        for (int kolom = 0; kolom < matrix[rij].length; kolom++) {
-            IO.print(String.format("%6s", matrix[rij][kolom]));
+    for (boolean[] rij : matrix) {
+        for (boolean b : rij) {
+            IO.print(String.format("%6s", b));
         }
         IO.println();
     }

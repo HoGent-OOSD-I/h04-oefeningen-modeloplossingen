@@ -1,5 +1,3 @@
-import java.security.SecureRandom;
-
 void main() {
     doeFocusoefening02();
 }
@@ -22,7 +20,7 @@ private void doeFocusoefening02() {
 
     // Laatste element van getallen kopiëren naar eerste element van getallen2
     getallen2[0] = getallen[getallen.length - 1];
-    // Opmerking: getallen[0] krijgt hierdoor nu ook de waarde 5.0!
+    // Opmerking: getallen[0] is nu ook 5.0!
 
     // Eerste en laatste element in array getallen vergelijken.
     IO.println(getallen[0] == getallen[getallen.length - 1]);
