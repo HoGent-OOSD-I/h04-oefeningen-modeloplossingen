@@ -22,7 +22,7 @@ private void toonSnippet2() {
     int[] getallen2 = getallen1;
     getallen1[1] = 100;
     getallen1 = new int[3];
-    getallen2[1] = 500;
+    getallen2[0] = 500;
     toonInhoud("Array getallen1: ", getallen1);
     toonInhoud("Array getallen2: ", getallen2);
 }
