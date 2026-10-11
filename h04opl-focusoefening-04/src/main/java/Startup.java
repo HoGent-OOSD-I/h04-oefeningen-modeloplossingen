@@ -36,7 +36,7 @@ private void doeFocusoefening04() {
     karakters.add(karakters.indexOf('R'), 'E');
 
     // Verwijder het eerste karakter en voeg het achteraan toe
-    karakters.addLast(karakters.removeFirst());
+    karakters.add(karakters.removeFirst());
 
     // Verwijder het voorlaatste karakter en voeg het vooraan toe
     karakters.addFirst(karakters.remove(karakters.size() - 2));
